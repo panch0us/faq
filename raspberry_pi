@@ -1,0 +1,2 @@
+1. Установка nextcloud - https://www.youtube.com/watch?v=yHSTYO4f4DI
+2. Добавляем внешний ip-адрес в файл /var/www/nextcloud/config/config.php
