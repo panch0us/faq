@@ -35,7 +35,7 @@
 	2.3. Редактируем php.ini
 		2.3.1 Добавляем extension=php_oci8_11g.dll
 
-		[3. УСТАНОВКА ORACLE CLIENT]
+[3. УСТАНОВКА ORACLE CLIENT]
 Скачать - (https://www.oracle.com/database/technologies/instant-client/downloads.html)
 
 	4.1. Установка системной переменной PATH = \путь до oracle client
