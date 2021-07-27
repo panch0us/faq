@@ -1,0 +1,41 @@
+PYINSTALLER - (модуль python) Создание exe файлов.
+В виртуальном окружении устанавливаем pyinstaller
+> pip install pyinstaller
+# onefile - для упаковки всё в один файл.exe, -i <имя картинки> - для ярлыка
+> pyinstaller <имя файла.py> --onefile -i icon.ico 
+Для того, чтобы не запускалась консоль необходимо, либо поменять название файла на pyw, либо изменить конфигурационный
+файл <имя файла>.spec (расположен в главной дирректории создания exe-файла)
+console=False
+После изменения файля в консоле выполнить:
+> pyinstaller <your_script>.spec
+
+
+--------------------- УСТАНОВКА ПАКЕТОВ БЕЗ ИНТЕРНЕТА -----------------
+
+--------------------- На исходном ПК ------------------
+python3 -m venv vevn
+source venv/bin/active
+pip install pip --upgrade
+# директория для скачивания пакетов
+mkdir pkg
+cd pkg
+# отдельно скачиваю последнею версию pip
+pip download pip
+# скачиваю необходимые пакеты с зависимостями
+pip download -r ../requirements.txt
+
+
+--------------------- На ПК без интернета ---------------------
+
+python3 -m venv vevn
+source venv/bin/active
+# устанавливаю ранее скаченный pip (версия может быть другая)
+pip install pkg/pip-20.1-py2.py3-none-any.whl
+# установка пакетов из списка requirements.txt, пакеты должны лежать в pkg (директория)
+pip install --no-index --find-links pkg -r requirements.txt
+
+
+--------------------- Установка из tar.gz или whl ---------------------
+
+# установка одного пакета из архива
+pip install ./pkg-name.tar.gz
