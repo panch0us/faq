@@ -14,3 +14,6 @@
 
 Обновить до последних изменений на своем компе:
 > git pull
+  Если требует авторизоваться:
+   > git config --global user.email почта@почта.ру
+   > git config --global user.name имя
