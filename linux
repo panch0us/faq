@@ -36,3 +36,37 @@ ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/var
 удаление осиротевших пакетов/библиотек и прочего треша, запускаем строго ПОСЛЕ обновления и перезагрузки. 
 Запускать надо т.к. может сильно высвободить память от мусора. Причем запускать несколько раз, как с CCleaner. 
 После этого может понадобится еще одна перезагрузка (в шапке будет system restart required).
+
+--------------------- АВТОЗАГРУЗКА СКРИПТА -----------------
+https://ru.stackoverflow.com/questions/1167196/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-py-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%B0-%D0%BD%D0%B0-linux
+sudo nano /etc/systemd/system/<your_bot_name>.service
+
+Туда копируете вот такой текст заменив текст в <> на ваши параметры:
+
+[Unit]
+Description=<YOUR BOT DESCRIPTION>
+After=network.target
+
+[Service]
+Type=simple
+User=<имя пользователя от которого вы запускаете скрипты>
+Group=<группа пользователя от которого вы запускаете скрипты>
+
+Environment=PYTHONPATH=</full/path/to/directory/with/your/script> 
+WorkingDirectory=</full/path/to/directory/with/your/script>
+ExecStart=</full/path/to/python> </full/path/to/your/script>
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=network.target
+
+Далее: Ctrl+X, y для сохранения файла юнита который только что создали
+
+Затем
+
+sudo systemctl daemon-reload
+sudo systemctl start <your_bot_name>.service
+sudo systemctl status <your_bot_name>.service
+# если все норм и юнит запустился...
+sudo systemctl enable <your_bot_name>.service
