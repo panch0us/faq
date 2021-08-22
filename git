@@ -17,3 +17,6 @@
   Если требует авторизоваться:
    > git config --global user.email почта@почта.ру
    > git config --global user.name имя
+
+4. Описание как добавить SSH-ключ для авторизации и пушей с ПК 
+https://loftschool.com/blog/posts/78-nastroyka-dostupa-po-ssh-k-neskolkim-profilyam-na-github-s-odnogo-kompyutera/
