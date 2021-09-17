@@ -39,3 +39,23 @@ pip install --no-index --find-links pkg -r requirements.txt
 
 # установка одного пакета из архива
 pip install ./pkg-name.tar.gz
+
+--------------------- Установка pip для старой версии python 3.4 ---------------------
+https://stackoverflow.com/questions/65869296/installing-pip-is-not-working-in-python-3-6/65871131#65871131
+
+For Python 3.4 install from https://bootstrap.pypa.io/pip/3.4/ . For Python 3.5 — https://bootstrap.pypa.io/pip/3.5/ .
+
+
+pip 21.0 dropped support for Python 2 and 3.5. The later versions require Python 3.6+. The syntax f"" is supported by Python 3.6+.
+
+To install pip for Python 2.7 install it from https://bootstrap.pypa.io/pip/2.7/ :
+
+- curl -O https://bootstrap.pypa.io/pip/2.7/get-pip.py
+- python get-pip.py
+- python -m pip install --upgrade "pip < 21.0"
+
+The last command is to upgrade to the latest supported version. For Python 2.7 the latest supported is currently pip 20.3.4.
+
+For Python 3.4 install from https://bootstrap.pypa.io/pip/3.4/ . For Python 3.5 — https://bootstrap.pypa.io/pip/3.5/ .
+For Python 3.4 the upgrade command is
+- python -m pip install --upgrade "pip < 19.2"
