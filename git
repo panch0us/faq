@@ -20,3 +20,9 @@
 
 4. Описание как добавить SSH-ключ для авторизации и пушей с ПК 
 https://loftschool.com/blog/posts/78-nastroyka-dostupa-po-ssh-k-neskolkim-profilyam-na-github-s-odnogo-kompyutera/
+
+---------------------------- Создание новой ветки ----------------------------
+https://smartiqa.ru/courses/git/lesson-3
+git branch <имя ветки> 
+git checkout <имя ветки>
+Проверка текущей ветки git branch
