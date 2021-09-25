@@ -32,3 +32,5 @@ git checkout <имя ветки>
 Клонирование ветки:
 git clone http://whatever.git -b branch-name
 
+Внесение извенений в локальную ветку:
+git pull https<github_repo> <branch>
