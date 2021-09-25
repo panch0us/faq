@@ -21,10 +21,14 @@
 4. Описание как добавить SSH-ключ для авторизации и пушей с ПК 
 https://loftschool.com/blog/posts/78-nastroyka-dostupa-po-ssh-k-neskolkim-profilyam-na-github-s-odnogo-kompyutera/
 
----------------------------- Создание новой ветки ----------------------------
+---------------------------- Работа с новой веткой ----------------------------
 https://smartiqa.ru/courses/git/lesson-3
 git branch <имя ветки> 
 git checkout <имя ветки>
 Проверка текущей ветки git branch
 для пуша не через ssh а через https: git push git push https://github.com/panch0us/clear_directory.git clear_directory_xp
 (указаывает на origin - а адрес нашего репозитория)
+
+Клонирование ветки:
+git clone http://whatever.git -b branch-name
+
