@@ -26,3 +26,5 @@ https://smartiqa.ru/courses/git/lesson-3
 git branch <имя ветки> 
 git checkout <имя ветки>
 Проверка текущей ветки git branch
+для пуша не через ssh а через https: git push git push https://github.com/panch0us/clear_directory.git clear_directory_xp
+(указаывает на origin - а адрес нашего репозитория)
