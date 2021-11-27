@@ -1,0 +1,13 @@
+---------------------------- Подлючение к БД Postgres ----------------------------
+project/settigs.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'learn_django', -- название БД в СУБД
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
