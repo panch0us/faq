@@ -70,3 +70,9 @@ sudo systemctl start <your_bot_name>.service
 sudo systemctl status <your_bot_name>.service
 # если все норм и юнит запустился...
 sudo systemctl enable <your_bot_name>.service
+
+
+--------------------- CENTOS 7 с нуля -----------------
+1. Добавляем пользователя в группу админов (wheel) для sudo
+# usermod -aG wheel username
+
