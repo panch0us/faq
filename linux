@@ -103,4 +103,12 @@ $ sudo systemctl restart network
 $ sudo yum install epel-release
 $ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
-
+8. Установка Python последней версии
+$ sudo yum groupinstall "Development Tools" -y (возможно вместо Dev... Tools вписать русское название, если язык ОС русский?)
+$ sudo yum install openssl-devel libffi-devel bzip2-devel -y
+	- openssl-devel
+	(содержит статические библиотеки и включаемые файлы (include),необходимые для компиляции приложений, 
+	использующих различные криптографические алгоритмы и протоколы. Вы должны устанавливать этот пакет, 
+	только если вы разрабатываете приложения с поддержкой SSL — вам не нужно устанавливать его, если вы только используете SSL)
+	- 
+$ sudo yum install wget -y
