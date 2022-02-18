@@ -73,8 +73,14 @@ sudo systemctl enable <your_bot_name>.service
 
 
 --------------------- CENTOS 7 с нуля -----------------
+https://serveradmin.ru/centos-nastroyka-servera/
 Установка: 
 Если интернет образ - то зеркало: mirror.yandex.ru/sentos/7/os/x86_64
 1. Добавляем пользователя в группу админов (wheel) для sudo
 # usermod -aG wheel username
-
+2. Обновляемся
+$ sudo yum update
+3. Отключить SELinux
+$ sudo vim /etc/sysconfig/selinux
+	SELINUX=disabled
+$ reboot
