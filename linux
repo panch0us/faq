@@ -85,3 +85,16 @@ $ sudo yum update
 $ sudo vim /etc/sysconfig/selinux
 	SELINUX=disabled
 $ reboot
+4. Настройка сети
+$ ip addr (нахоим наш сетевой интерфейс)
+Если нужен статический ip:
+$ sudo vim /etc/sysconfig/network-scripts/ifcfg-{название нашего сет. интерфейса}
+	BOOTPROTO 	с dhcp на none
+	DNS1 	указали dns сервер
+	IPADDR0 	настроили статический ip адрес
+	PREFIX0 	указали маску подсети
+	GATEWAY0 	настроили шлюз по-умолчанию
+$ sudo systemctl restart network
+
+
+
