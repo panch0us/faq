@@ -104,6 +104,7 @@ $ sudo yum install epel-release
 $ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 8. Установка Python последней версии
+https://infoit.com.ua/linux/ustanovka-python-3-9-na-centos-8-centos-7/
 $ sudo yum groupinstall "Development Tools" -y (возможно вместо Dev... Tools вписать русское название, если язык ОС русский?)
 $ sudo yum install openssl-devel libffi-devel bzip2-devel -y
 	- openssl-devel
