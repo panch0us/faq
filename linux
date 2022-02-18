@@ -78,6 +78,7 @@ https://serveradmin.ru/centos-nastroyka-servera/
 Если интернет образ - то зеркало: mirror.yandex.ru/sentos/7/os/x86_64
 1. Добавляем пользователя в группу админов (wheel) для sudo
 # usermod -aG wheel username
+Перехаходим по пользовталя (exit)
 2. Обновляемся
 $ sudo yum update
 3. Отключить SELinux
