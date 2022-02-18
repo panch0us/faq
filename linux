@@ -118,4 +118,5 @@ $ tar xvf Python-3.10.2.tgz
 $ ./configure --enable-optimizations (настройка установки Python)
 $ sudo make altinstall
 
+Python установлен в /usr/local/bin/python3.10
 
