@@ -124,3 +124,10 @@ Python установлен в /usr/local/bin/python3.10
 
 8.1. Далее у меня возникла пробема с пакетом openssl-devel, он был старой версии до 1.1.1, а с Python >= 3.10 нужна весрия openssl-devel >= 1.1.1
 	(https://www.python.org/dev/peps/pep-0644/)
+Установка последней версии openssl (https://cloudwafer.com/blog/installing-openssl-on-centos-7/)
+Единсвенное отличие по статье: для 64-битой архитектуры:
+
+cd /etc/ld.so.conf.d/
+sudo vim openssl-{версия}.conf
+прописать не /usr/local/ssl/lib, a /usr/local/ssl/lib64
+
