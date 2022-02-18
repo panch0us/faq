@@ -73,6 +73,8 @@ sudo systemctl enable <your_bot_name>.service
 
 
 --------------------- CENTOS 7 с нуля -----------------
+Установка: 
+Если интернет образ - то зеркало: mirror.yandex.ru/sentos/7/os/x86_64
 1. Добавляем пользователя в группу админов (wheel) для sudo
 # usermod -aG wheel username
 
