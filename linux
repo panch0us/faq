@@ -101,6 +101,6 @@ $ sudo systemctl restart network
 Работает сразу
 7. Добавление репозиториев
 $ sudo yum install epel-release
-
+$ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 
