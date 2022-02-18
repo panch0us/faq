@@ -112,3 +112,9 @@ $ sudo yum install openssl-devel libffi-devel bzip2-devel -y
 	только если вы разрабатываете приложения с поддержкой SSL — вам не нужно устанавливать его, если вы только используете SSL)
 	- 
 $ sudo yum install wget -y
+$ wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
+$ tar xvf Python-3.10.2.tgz 
+$ ./configure --enable-optimizations (настройка установки Python)
+$ sudo make altinstall
+
+
