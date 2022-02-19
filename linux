@@ -104,35 +104,17 @@ $ sudo yum install epel-release
 $ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 8. Установка Python последней версии
-https://infoit.com.ua/linux/ustanovka-python-3-9-na-centos-8-centos-7/
-$ sudo yum groupinstall "Development Tools" -y (возможно вместо Dev... Tools вписать русское название, если язык ОС русский?)
-$ sudo yum install openssl-devel libffi-devel bzip2-devel -y
-	- openssl-devel
-	(содержит статические библиотеки и включаемые файлы (include),необходимые для компиляции приложений, 
-	использующих различные криптографические алгоритмы и протоколы. Вы должны устанавливать этот пакет, 
-	только если вы разрабатываете приложения с поддержкой SSL — вам не нужно устанавливать его, если вы только используете SSL)
 
-Перед продолжением см. п. 8.1.
-
-$ sudo yum install wget -y
-$ wget https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
-$ tar xvf Python-3.10.2.tgz 
-$ ./configure --enable-optimizations (настройка установки Python)
-$ sudo make altinstall
-
-Python установлен в /usr/local/bin/python3.10
-
-8.1. Далее у меня возникла пробема с пакетом openssl, он был старой версии до 1.1.1, а с Python >= 3.10 нужна весрия openssl >= 1.1.1
-	(https://www.python.org/dev/peps/pep-0644/)
-Установка последней версии openssl 
-- https://cloudwafer.com/blog/installing-openssl-on-centos-7/
-- https://docs.python.org/3/using/unix.html
-После установки по второй ссылке была проблема: libssl.so.1.1 connot open..
+Первый способ попробовать:
+https://docs.python.org/3/using/unix.html
+После установки была проблема с openssl: libssl.so.1.1 connot open..
 Решилось:
 $ sudo cp /usr/local/openssl-1.1.1m/lib/libcrypto.so.1.1 /usr/lib64
 $ sudo cp /usr/local/openssl-1.1.1m/lib/libssl.so.1.1 /usr/lib64
-Единсвенное отличие по статье: для 64-битой архитектуры:
 
-cd /etc/ld.so.conf.d/
-sudo vim openssl-{версия}.conf
-прописать не /usr/local/ssl/lib, a /usr/local/ssl/lib64
+(дополинтельные возможности для установки openssl https://cloudwafer.com/blog/installing-openssl-on-centos-7/)
+
+Возможно перед первым способом нужно будет:
+https://infoit.com.ua/linux/ustanovka-python-3-9-na-centos-8-centos-7/
+$ sudo yum groupinstall "Development Tools" -y (возможно вместо Dev... Tools вписать русское название, если язык ОС русский?)
+$ sudo yum install openssl-devel libffi-devel bzip2-devel -y
