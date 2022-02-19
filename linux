@@ -122,9 +122,15 @@ $ sudo make altinstall
 
 Python установлен в /usr/local/bin/python3.10
 
-8.1. Далее у меня возникла пробема с пакетом openssl-devel, он был старой версии до 1.1.1, а с Python >= 3.10 нужна весрия openssl-devel >= 1.1.1
+8.1. Далее у меня возникла пробема с пакетом openssl, он был старой версии до 1.1.1, а с Python >= 3.10 нужна весрия openssl >= 1.1.1
 	(https://www.python.org/dev/peps/pep-0644/)
-Установка последней версии openssl (https://cloudwafer.com/blog/installing-openssl-on-centos-7/)
+Установка последней версии openssl 
+- https://cloudwafer.com/blog/installing-openssl-on-centos-7/
+- https://docs.python.org/3/using/unix.html
+После установки по второй ссылке была проблема: libssl.so.1.1 connot open..
+Решилось:
+$ sudo cp /usr/local/openssl-1.1.1m/lib/libcrypto.so.1.1 /usr/lib64
+$ sudo cp /usr/local/openssl-1.1.1m/lib/libssl.so.1.1 /usr/lib64
 Единсвенное отличие по статье: для 64-битой архитектуры:
 
 cd /etc/ld.so.conf.d/
