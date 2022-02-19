@@ -106,6 +106,9 @@ $ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 8. Установка Python последней версии
 
 Первый способ попробовать:
+(к нижней сслыке в установку питона добавить: (https://docs.python.org/3/using/configure.html#configure-options)
+ --enable-loadable-sqlite-extensions (по-умолчанию нет поддержки sqlite - иначе ошибки, н-р в джанго
+ НЕ ИСПОЛЬЗОВАТЕ --enable-optimizations, т.к. если gcc ниже 8.1.0 , а только с этой весрии пофикшена проблема с этой камндой...
 https://docs.python.org/3/using/unix.html
 После установки была проблема с openssl: libssl.so.1.1 connot open..
 Решилось:
