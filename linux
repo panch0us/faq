@@ -130,4 +130,3 @@ Python установлен в /usr/local/bin/python3.10
 cd /etc/ld.so.conf.d/
 sudo vim openssl-{версия}.conf
 прописать не /usr/local/ssl/lib, a /usr/local/ssl/lib64
-
