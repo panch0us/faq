@@ -154,3 +154,6 @@ $ sudo systemctl status postgresql
 Использование СУБД:
 $ sudo -i -u postgres
 $ psql
+
+Восстановление БД:
+pg_restore -d <dbname> -1 <filename>.dump
