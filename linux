@@ -103,7 +103,7 @@ $ sudo systemctl restart network
 $ sudo yum install epel-release
 $ sudo rpm -Uhv http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
-8. Установка Python последней версии
+8. Установка Python последней версии (после кучи проблем с несовместимостью sqlite/openssl решил забить и перейти на свежую версию linux =)
 
 $ sudo yum install libsqlite3x-devel.x86_64 (точное название можно узнать yum list | grep sqlite libsqlite3)
 $ ./configure -C --with-openssl=/usr/local/{имя дирректори openssl} --with-openssl-rpath=auto --enable-loadable-sqlite-extensions --prefix=/usr/local/python-3.x.x
@@ -125,3 +125,25 @@ $ sudo cp /usr/local/openssl-1.1.1m/lib/libssl.so.1.1 /usr/lib64
 https://infoit.com.ua/linux/ustanovka-python-3-9-na-centos-8-centos-7/
 $ sudo yum groupinstall "Development Tools" -y (возможно вместо Dev... Tools вписать русское название, если язык ОС русский?)
 $ sudo yum install openssl-devel libffi-devel bzip2-devel -y
+
+--------------------- DEBIAN 11 с нуля -----------------
+1. Установка SSH:
+https://losst.ru/nastrojka-ssh-v-debian
+2. Установка Python последней версии:
+https://docs.python.org/3/using/unix.html, https://infoit.com.ua/linux/kak-ustanovit-python-3-10-na-debian-11-debian-10/
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+$ wget https://www.python.org/ftp/python/{посл.версия}
+$ tar -xf Python...
+$ cd Py..
+$ ./configure --prefix=/usr/local/python-3.x.x --enable-optimizations
+
+3. Установка postgresql
+https://www.postgresql.org/download/linux/debian/
+
+$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+$ sudo apt update
+$ sudo apt search postgresql-№версии
+$ sudo apt install postgresql-№версии
