@@ -158,9 +158,21 @@ $ psql
 Восстановление БД:
 pg_restore -d <dbname> -1 <filename>.dump
 
+Создадим пользователя под проект на Django:
+	CREATE USER myprojectuser WITH PASSWORD 'password';
+	GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+    	ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+  	ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+   	ALTER ROLE myprojectuser SET timezone TO 'Europe/Moscow';
+
+
+
 4. Связываем Python с Postgresql
 $ sudo apt install libpq-dev 
 (Файлы заголовков и статическая библиотека для компиляции программ 
 на C для связывания с библиотекой libpq для связи с базой данных PostgreSQL)
 
 $ pip install psycopg2
+
+
+
