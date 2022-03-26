@@ -157,3 +157,10 @@ $ psql
 
 Восстановление БД:
 pg_restore -d <dbname> -1 <filename>.dump
+
+4. Связываем Python с Postgresql
+$ sudo apt install libpq-dev 
+(Файлы заголовков и статическая библиотека для компиляции программ 
+на C для связывания с библиотекой libpq для связи с базой данных PostgreSQL)
+
+$ pip install psycopg2
